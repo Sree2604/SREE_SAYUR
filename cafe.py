@@ -8,7 +8,6 @@ itemsInCafe = ['coffee','tea','cappucino','cookie']
 
 itemStock = [50,60,45,35]
 itemStockRefill = [50,60,45,35]
-refill = False
 itemPrice = [35,45,80,35]
 
 quantityInWords = ['one','two','three','four','five','six','seven','eight','nine']
@@ -40,7 +39,6 @@ def addSales():
     for j in range(len(itemsInCafe)):
         if itemStock[j] <= (itemStockRefill[j] * 0.2):
             itemStock[j] = itemStockRefill[j]
-            refill = True
             
         itemStock[j] -= quantities[j]
         itemSales[j] += quantities[j]
@@ -77,8 +75,6 @@ def main(time):
         addSales()
     calculateProfit()
     topProfitSales()
-    if refill == True:
-        print("Refilled....")
 
 
 if time == 0:
