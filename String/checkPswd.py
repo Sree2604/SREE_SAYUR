@@ -8,7 +8,7 @@ Check if the username and password is correct.
 
 #ask the user to input the username
 username = input("Enter your username: ")
-correctPassWord = ''     #declaring a variable to check user's password....
+correctPassWord = ''     #declaring a variable to check user's password...
 
 numbers = ['1','2','3','4','5','6','7','8','9']       #creating a list full of single digits....
 
@@ -30,4 +30,4 @@ if '@' in username and ('.com' in username or '.edu' in username or '.tech' in u
      #if end
 
 else:     #if the username is wrong....
-    print("Username is not valid...")    
+    print("Username is not valid")    
