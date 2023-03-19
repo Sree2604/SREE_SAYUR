@@ -6,9 +6,6 @@ if the supply reaches 20% of the stock. Print the 3 items with highest sales, an
 quantityInWords = ['one','two','three','four','five','six','seven','eight','nine']
 quantityInDigits = ['1','2','3','4','5','6','7','8','9']
 
-totalTime = 12
-addTime = 4
-
 items = {
     'coffee' : 
     {
@@ -65,11 +62,3 @@ def processCustomerInput(customerInput):
 customerInput = input("What do u want...: ")
 processCustomerInput(customerInput.lower())
 print(items['coffee'])
-'''
-def main(time):
-    while time < totalTime:
-        time += addTime
-        customerInput = input("What do u want...: ")
-        processCustomerInput(customerInput.lower())
-main()
-'''
