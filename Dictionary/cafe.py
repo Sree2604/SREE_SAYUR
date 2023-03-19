@@ -6,6 +6,9 @@ if the supply reaches 20% of the stock. Print the 3 items with highest sales, an
 quantityInWords = ['one','two','three','four','five','six','seven','eight','nine']
 quantityInDigits = ['1','2','3','4','5','6','7','8','9']
 
+totalTime = 12
+addTime = 4
+
 items = {
     'coffee' : 
     {
@@ -45,16 +48,13 @@ items = {
     }
 }
 
-  
-
-
 def processCustomerInput(customerInput):
     list1 = list(customerInput.split())
     global quantity
     #quantities = []
     for i in items:
         x = items.get(i)
-        if x['name'] in list1:
+        if i in list1:
             index = (list1.index(i)) - 1 
             for k in range(len(quantityInWords)):
                 if quantityInWords[k] in list1[index] or quantityInDigits[k] in list1[index]:
@@ -64,6 +64,12 @@ def processCustomerInput(customerInput):
 
 customerInput = input("What do u want...: ")
 processCustomerInput(customerInput.lower())
-print(quantity)
-
-print(items['coffee'],items['tea'])
+print(items['coffee'])
+'''
+def main(time):
+    while time < totalTime:
+        time += addTime
+        customerInput = input("What do u want...: ")
+        processCustomerInput(customerInput.lower())
+main()
+'''
