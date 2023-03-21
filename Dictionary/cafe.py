@@ -6,6 +6,11 @@ if the supply reaches 20% of the stock. Print the 3 items with highest sales, an
 quantityInWords = ['one','two','three','four','five','six','seven','eight','nine']
 quantityInDigits = ['1','2','3','4','5','6','7','8','9']
 
+totalTime = 12
+addTime = 4
+time = 0
+
+
 items = {
     'coffee' : 
     {
@@ -45,20 +50,46 @@ items = {
     }
 }
 
+def itemRestock(item):
+    if items[item]['stock'] <= items[item]['refill']*0.2:
+        items[item]['stock'] =  items[item]['refill']
+
 def processCustomerInput(customerInput):
     list1 = list(customerInput.split())
-    global quantity
+    global quantity,item
     #quantities = []
     for i in items:
         x = items.get(i)
         if i in list1:
+            item = i
             index = (list1.index(i)) - 1 
             for k in range(len(quantityInWords)):
                 if quantityInWords[k] in list1[index] or quantityInDigits[k] in list1[index]:
                     quantity = int(quantityInDigits[k])
+            itemRestock(item)
             x['stock'] -= quantity
             x['sales'] += quantity
 
-customerInput = input("What do u want...: ")
-processCustomerInput(customerInput.lower())
-print(items['coffee'])
+def topProfitSales():
+    global sorted_sales, sorted_profit
+    sorted_sales = sorted(items.items(), key=lambda x: x[1]['sales'], reverse=True)
+    print("\nTop 3 items by sales:")
+    for i,j in sorted_sales[:3]:
+        print(f"{i} - {j['sales']}")
+
+def main(time):
+    while time < totalTime:
+        time += addTime
+        customerInput = input("What do u want...: ")
+        processCustomerInput(customerInput.lower())
+    topProfitSales()
+
+
+if time == 0:
+    print("...Warm greetings to our customers...")
+    print("")
+    print("(: Here are the items that we can serve you :)")
+    for i,j in items.items():
+        print(i.upper())
+    print("")
+    main(time)
