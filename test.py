@@ -6,7 +6,8 @@ items = {
         'stock' : 20,
         'refill' : 20,
         'profit' : 8,
-        'sales' : 0
+        'totalProfit' : 250,
+        'sales' : 56
     },
     'tea' : 
     {
@@ -15,7 +16,8 @@ items = {
         'stock' : 35,
         'refill' : 35,
         'profit' : 10,
-        'sales' : 0
+        'totalProfit' : 400,
+        'sales' : 54
     },
     'sandwich' : 
     {
@@ -24,7 +26,8 @@ items = {
         'stock' : 25,
         'refill' : 25,
         'profit' : 18,
-        'sales' : 0
+        'totalProfit' : 310,
+        'sales' : 92
     },
     'fries' : 
     {
@@ -33,10 +36,8 @@ items = {
         'stock' : 30,
         'refill' : 30,
         'profit' : 5,
-        'sales' : 0
+        'totalProfit' : 280,
+        'sales' : 76
     }
 }
 
-
-for i,j in items.items():
-    print(i)
