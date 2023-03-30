@@ -120,10 +120,6 @@ def main(time):
         print(i.upper())
     print("")
     global customer
-    for i,j in itemsInCafe.items():
-        if j['type'] == 'hot':
-            j['stock'] = j['refill']
-    print("Supply replenished at the start of the day...")
     while time < totalTime:
     #using while loop to check if time is less than total time 
         #getting the input from user in the below format and add time 
@@ -132,8 +128,7 @@ def main(time):
         customer+=1
         processCustomerInput(customerInput.lower())     #passing userinput to a func as a arg...
     for i,j in itemsInCafe.items():
-        if j['type'] == 'cold':
-            j['stock'] = j['refill']
+        j['stock'] = j['refill']
     print("Supply replenished at the end of the day...")
     topProfitSales()    #calculating top profit and sales
 
