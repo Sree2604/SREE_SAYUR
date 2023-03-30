@@ -92,7 +92,6 @@ def itemRestock(item):
 def processCustomerInput(customerInput):
     '''this function is used to process the input to find the items ordered and quantity of it....'''
     cInput = customerInput.split()  #split the customer input into a variable
-    print(cInput)
     global quantity,item    #definig two global variables
 
     for i,j in itemsInCafe.items():
@@ -105,8 +104,7 @@ def processCustomerInput(customerInput):
                     quantity = int(quantityInDigits[k])
 
             #passing item as arg to check need of restocking   
-            repelnish = itemRestock(item)
-            print(repelnish)
+            itemRestock(item)
             j['stock'] -= quantity  #reducing the stock quantity of item
             j['sales'] += quantity  #adding the sales quantity of item
     
