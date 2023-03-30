@@ -15,7 +15,6 @@ addTime = 4
 
  
 itemsInCafe = {
-'''Creating a dictionary for items and each item is represented as a nested dictionary with various attributes'''
     'coffee' : 
     {
         'name' : 'coffee',
@@ -91,7 +90,7 @@ def processCustomerInput(customerInput):
     global quantity,item    #definig two global variables
 
     for i,j in itemsInCafe.items():
-        if i in cInput:
+        if j['name'] in cInput:
         #processing what are the items ordered and quantity of items...
             item = i
             index = (cInput.index(i)) - 1 
@@ -103,15 +102,6 @@ def processCustomerInput(customerInput):
             itemRestock(item)
             j['stock'] -= quantity  #reducing the stock quantity of item
             j['sales'] += quantity  #adding the sales quantity of item
-    else:
-    #if the customer input in the dictionary
-        print("Sorry, we don't have that item. Please choose from the items on the menu.")
-        print("")
-        print("(: Here are the items that we can serve you :)")
-        for i in itemsInCafe:
-            print(i.upper())
-        customerInput = input("What do u want...: ")    #input format: two coffee and 6 tea
-        processCustomerInput(customerInput.lower())     #passing userinput to a func as a arg...
 
 def main(time):
     '''greeting the customer and printing the items in cafe...'''
