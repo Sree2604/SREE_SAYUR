@@ -1,8 +1,9 @@
+# initialize counters for upper and lower case letters
+upperCount = 0
+lowerCount = 0
+
 def countUpperLower(string):
-    # initialize counters for upper and lower case letters
-    upperCount = 0
-    lowerCount = 0
-    
+    global upperCount,lowerCount
     # iterate through each character in the string
     for char in string:
         if char.isupper():
