@@ -5,10 +5,10 @@ lowerCount = 0
 def countUpperLower(inputString):
     global upperCount,lowerCount
     # iterate through each character in the string
-    for char in inputString:
-        if char.isupper():
+    for letter in inputString:
+        if letter.isupper():
             upperCount += 1
-        elif char.islower():
+        elif letter.islower():
             lowerCount += 1
     
     # return the count of upper and lower case letters
