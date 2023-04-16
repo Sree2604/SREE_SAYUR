@@ -2,10 +2,10 @@
 upperCount = 0
 lowerCount = 0
 
-def countUpperLower(string):
+def countUpperLower(inputString):
     global upperCount,lowerCount
     # iterate through each character in the string
-    for char in string:
+    for char in inputString:
         if char.isupper():
             upperCount += 1
         elif char.islower():
