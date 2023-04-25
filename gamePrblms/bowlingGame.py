@@ -18,15 +18,10 @@ def bonusPoints(firstRoll,secondRoll):
     return points
 
 def calculateScore(firstRoll,secondRoll):
-    bonus = bonusPoints(firstRoll,secondRoll)
-    return firstRoll + secondRoll + bonus
-    #return firstRoll + secondRoll
-
-def frames(firstRoll):
-    if firstRoll == 10:
-        return True
-    else:
-        return True
+    if frame == 10:
+        bonus = bonusPoints(firstRoll,secondRoll)
+        return firstRoll + secondRoll + bonus
+    return firstRoll + secondRoll
 
 def rolls():
     secondRoll = 0
@@ -44,13 +39,10 @@ def rolls():
 while frame != 11:
     print(f"Frame:{frame}")
     rollValues = rolls()
-    checkFrames = frames(rollValues[0])
-    if checkFrames == True:
-        frame+=1
-    currentFrame = frame - 1
     score = calculateScore(rollValues[0],rollValues[1])
     totalScore += score
-    print(f"Score of frame {frame - 1} is {score}")
+    print(f"Score of frame {frame} is {score}")
     print(totalScore)
+    frame+=1
 
 print(f"Maximum Score: {totalScore}")
