@@ -15,11 +15,11 @@ else:
 
 def checkPalindrome(string):
     start = 0
-    end = 1
+    end = len(string)-1
     while(start<end):
            if(string[start] == string[end]):
                start = start + 1
-               end = -(end + 1)
+               end = end - 1
            else:
                return False
     return True
