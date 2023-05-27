@@ -3,16 +3,19 @@
 # #eg input = abcdefg , output = ab cd ef g
 print("")
 print("PROGRAM--1")
-inputString = "abcdefgh"
+inputString = "abcdefg"
 idx = 0 #counter to track the chars
 newString = ""
 while idx < len(inputString):
-    newString += inputString[idx] + inputString[idx+1] #(assign the from i, i+1 of inputString)
-    newString += " " #add space
-    idx+=2
+    #loop until the counter variable less than lenght of inputString
+    newString += inputString[idx]   #
+    if (idx+1) % 2 == 0:
+        #add space to newString if the condition is true
+        newString += ' '
+    idx+=1  #incrementing the index value
+    
+print(newString)    #print the newString
 
-print (newString)
- 
 # ########## Program 2
 # #Print your name in a pyramid
 # #eg RAM
@@ -62,7 +65,7 @@ for word in inputString.split(): #gets the word in a sentence
     firstChar = word[0]
     for index, char in enumerate(word): #returns both the index and the char in the word
         if char in vowels:
-            firstVowelIndex = index
+            firstVowelIndex = index #assigning index value to a variable
             
     if firstVowelIndex != 0:
         outputString += word[firstVowelIndex + 1:] + word[:firstVowelIndex] + word[firstVowelIndex] + pigLatinKey + " "
