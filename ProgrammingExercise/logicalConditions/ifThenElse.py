@@ -1,6 +1,30 @@
 ############# Problem 1 ###########
 #Google and find the tax slabs for income tax for India. Write a program to calculate the income tax for an 
 #individual. Input is Salary. Optional input - any deductions.
+salary = int(input("Enter ur annual salary: "))
+
+if salary <= 300000:
+    print("You need not to pay tax...")
+
+elif 300000 < salary <= 600000:
+    tax = 0.05
+    print(f"You need to pay {salary * tax} from your {salary}...")
+
+elif 600000 < salary <= 900000:
+    tax = 0.10
+    print(f"You need to pay {salary * tax} from your {salary}...")
+
+elif 900000 < salary <= 1200000:
+    tax = 0.15
+    print(f"You need to pay {salary * tax} from your {salary}...")
+
+elif 1200000 < salary <= 1500000:
+    tax = 0.20
+    print(f"You need to pay {salary * tax} from your {salary}...")
+
+else:
+    tax = 0.30
+    print(f"You need to pay {salary * tax} from your {salary}...")
 
 ############ Problem 2 ####
 #Calculate the BMI and if the person is underweihgt/normal/overweight/obese
